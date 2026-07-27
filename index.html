@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Suggestion Box · DY Patil Dnyanshanti School, Akurdi</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="letterhead">
+    <div class="crest">DP</div>
+    <h1 class="school-name">DY Patil Dnyanshanti School, Akurdi</h1>
+    <p class="program-name">Student Council · Confidential Suggestion Box</p>
+  </header>
+
+  <main class="wrap">
+
+    <section class="intro">
+      <div>
+        <h1>Report a concern, safely.</h1>
+        <p>
+          This box exists so that every student can speak up about bullying without fear.
+          Fill in only what you know — every optional field can be left blank, and your
+          report will still be read and acted upon.
+        </p>
+      </div>
+      <div class="confidential-note">
+        <strong>Your identity is protected.</strong>
+        Only the student council and designated staff will see this report. You do not
+        need to share your name to be heard.
+      </div>
+    </section>
+
+    <!--
+      HOW SUBMISSIONS ARE EMAILED
+      ---------------------------
+      This form uses FormSubmit (https://formsubmit.co) — a free service that forwards
+      form submissions straight to an email inbox with no backend server required.
+
+      Before this goes live:
+      1. The very first submission will trigger a one-time "activation" email to
+         mahaswetadey.dypdss@gmail.com. Someone must open that email and click
+         "Activate Form" once — after that, every future submission is delivered
+         automatically and silently.
+      2. Once this site is hosted (e.g. on GitHub Pages, Netlify, or the school's
+         own domain), update the "_next" hidden field below to the FULL address of
+         thankyou.html (for example: https://yourschool.github.io/suggestion-box/thankyou.html).
+         A relative path works on most hosts, but a full URL is the safest bet.
+    -->
+    <form action="https://formsubmit.co/mahaswetadey.dypdss@gmail.com" method="POST">
+
+      <!-- FormSubmit configuration -->
+      <input type="hidden" name="_subject" value="New Bullying Report — Suggestion Box">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="thankyou.html">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <fieldset>
+        <legend>About you (optional)</legend>
+        <div class="field-row two-col">
+          <div>
+            <label for="reporterName">Your name <span class="optional">(optional)</span></label>
+            <input type="text" id="reporterName" name="Reporter Name" placeholder="Leave blank to stay anonymous">
+          </div>
+          <div>
+            <label for="reporterClass">Your class <span class="optional">(optional)</span></label>
+            <input type="text" id="reporterClass" name="Reporter Class" placeholder="e.g. 8 B">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>About the student affected (optional)</legend>
+        <div class="field-row two-col">
+          <div>
+            <label for="victimName">Name of the victim <span class="optional">(optional)</span></label>
+            <input type="text" id="victimName" name="Victim Name" placeholder="If known">
+          </div>
+          <div>
+            <label for="victimClass">Class of the victim <span class="optional">(optional)</span></label>
+            <input type="text" id="victimClass" name="Victim Class" placeholder="e.g. 7 A">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>About the incident</legend>
+        <div class="field-row two-col">
+          <div>
+            <label for="bullyName">Name of the bully <span class="required">*</span></label>
+            <input type="text" id="bullyName" name="Bully Name" placeholder="Required" required>
+          </div>
+          <div>
+            <label for="bullyClass">Class of the bully <span class="required">*</span></label>
+            <input type="text" id="bullyClass" name="Bully Class" placeholder="e.g. 9 C" required>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label for="bullyType">Type of bullying <span class="required">*</span></label>
+            <select id="bullyType" name="Type of Bullying" required>
+              <option value="" disabled selected>Select a type</option>
+              <option value="Physical">Physical</option>
+              <option value="Mental / Emotional">Mental / Emotional</option>
+              <option value="Verbal">Verbal</option>
+              <option value="Cyberbullying (online)">Cyberbullying (online)</option>
+              <option value="Social exclusion">Social exclusion</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div>
+            <label for="description">Describe what happened <span class="optional">(optional)</span></label>
+            <textarea id="description" name="Description" placeholder="What happened, when, and where — anything that helps the council understand the situation."></textarea>
+            <p class="hint">The more detail you share, the easier it is for the council to act.</p>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="submit-row">
+        <span class="seal"><span class="dot"></span>Sealed &amp; confidential</span>
+        <button type="submit">Submit report</button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <footer class="site-footer">
+    DY Patil Dnyanshanti School, Akurdi &middot; Student Council Suggestion Box
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #1A2740;
+  --slate: #2F4468;
+  --slate-light: #3E5C86;
+  --gold: #B98B3E;
+  --gold-light: #DDBC7C;
+  --paper: #F6F5F1;
+  --paper-deep: #EFEDE6;
+  --line: #DAD9D2;
+  --brick: #A6423B;
+  --ink-soft: #56607A;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+.letterhead {
+  background: linear-gradient(180deg, var(--ink) 0%, var(--slate) 100%);
+  color: #EFEDE6;
+  padding: 2.75rem 1.5rem 2.25rem;
+  text-align: center;
+  position: relative;
+  border-bottom: 3px solid var(--gold);
+}
+
+.letterhead::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -3px;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 10px, transparent 10px 20px);
+  opacity: .6;
+}
+
+.letterhead .crest {
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--gold-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.02em;
+}
+
+.letterhead .school-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.01em;
+}
+
+.letterhead .program-name {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin: 0;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 720px) {
+  .intro { grid-template-columns: 1.3fr 1fr; align-items: start; }
+}
+
+.intro h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+
+.intro p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.confidential-note {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1.1rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.confidential-note strong {
+  display: block;
+  color: var(--ink);
+  font-family: 'Fraunces', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+form {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+  box-shadow: 0 1px 2px rgba(26,39,64,0.04), 0 12px 32px -18px rgba(26,39,64,0.25);
+}
+
+fieldset {
+  border: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+fieldset legend {
+  font-family: 'Fraunces', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--slate);
+  padding: 0 0 0.6rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+  margin-bottom: 1.1rem;
+}
+
+@media (min-width: 620px) {
+  .field-row.two-col { grid-template-columns: 1fr 1fr; }
+}
+
+label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+
+label .optional {
+  font-weight: 400;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.82rem;
+}
+
+label .required {
+  color: var(--brick);
+  margin-left: 0.2rem;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.96rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.7rem 0.85rem;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(185,139,62,0.18);
+  background: #fff;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.3rem;
+}
+
+.submit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.seal .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+button[type="submit"] {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: var(--ink);
+  color: #F6F5F1;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 1.9rem;
+  border-radius: 6px;
+  transition: background .15s ease, transform .1s ease;
+  margin-left: auto;
+}
+
+button[type="submit"]:hover { background: var(--slate); }
+button[type="submit"]:active { transform: translateY(1px); }
+
+footer.site-footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  padding: 2rem 1.5rem 3rem;
+}
+
+/* Thank-you page */
+.confirm-wrap {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+}
+
+.receipt {
+  max-width: 480px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 2.75rem 2rem 2.25rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(26,39,64,0.04), 0 20px 48px -20px rgba(26,39,64,0.3);
+}
+
+.receipt::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 12%; right: 12%;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 16px);
+}
+
+.receipt .stamp {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 1.25rem;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  transform: rotate(-6deg);
+}
+
+.receipt h1 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+
+.receipt p {
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  margin: 0 0 0.5rem;
+}
+
+.receipt .signoff {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--slate);
+  font-size: 0.95rem;
+}
+
+.receipt a.back {
+  display: inline-block;
+  margin-top: 1.75rem;
+  font-size: 0.85rem;
+  color: var(--slate);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 2px;
+}
