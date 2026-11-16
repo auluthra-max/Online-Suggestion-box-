@@ -13,8 +13,9 @@ python3 -m http.server 8000   # then visit http://localhost:8000
 ```
 
 It also works as-is on any static host (for example GitHub Pages), which is the
-easiest way to use it on an Android phone. In Chrome, "Add to Home screen"
-installs it as an app.
+easiest way to use it on an Android phone. In Chrome, open the page, tap the
+menu and choose "Add to Home screen" / "Install app". Once installed it also
+works offline.
 
 ## What's inside
 
