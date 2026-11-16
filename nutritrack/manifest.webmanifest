@@ -1,0 +1,14 @@
+{
+  "name": "NutriTrack",
+  "short_name": "NutriTrack",
+  "description": "Private nutrition tracker with an Indian food database.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0a0b",
+  "theme_color": "#0a0a0b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
